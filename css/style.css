@@ -185,15 +185,12 @@ a {
 }
 
 #changing-text {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 24px;
-    color: #ff5733; 
-    border-right: 3px solid #ff5733;
+    color: #00c0ff; 
+    border-right: 3px solid #00c0ff;
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
-    animation: blinkCursor 0.8s infinite;
+    animation: blinkCursor 1s infinite;
 }
 
 @keyframes blinkCursor {
