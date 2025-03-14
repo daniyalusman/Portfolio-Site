@@ -33,18 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let textIndex = 0;
 
     function changeText() {
-        textElement.style.opacity = 0;
+        textElement.style.opacity = "0"; // Fade out effect
         setTimeout(() => {
-            textElement.textContent = textArray[textIndex]; 
-            textElement.style.opacity = 1; 
-            textIndex = (textIndex + 1) % textArray.length; /
-        }, 500);
+            textElement.textContent = textArray[textIndex]; // Change text
+            textElement.style.opacity = "1"; // Fade in effect
+            textIndex = (textIndex + 1) % textArray.length; // Loop back
+        }, 500); // 500ms delay for fade effect
     }
 
-    setInterval(changeText, 3000); 
+    setInterval(changeText, 3000); // Change every 3 seconds
 });
-
-
 
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
