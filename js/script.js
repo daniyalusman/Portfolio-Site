@@ -31,18 +31,35 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     
     let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    function changeText() {
-        textElement.style.opacity = "0";
-        setTimeout(() => {
-            textElement.textContent = textArray[textIndex];
-            textElement.style.opacity = "1";
-            textIndex = (textIndex + 1) % textArray.length;
-        }, 500); 
+    function typeEffect() {
+        let currentText = textArray[textIndex];
+        
+        if (isDeleting) {
+            textElement.textContent = currentText.substring(0, charIndex--);
+        } else {
+            textElement.textContent = currentText.substring(0, charIndex++);
+        }
+
+        let speed = isDeleting ? 50 : 100; 
+
+        if (!isDeleting && charIndex === currentText.length) {
+            speed = 1500; 
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % textArray.length; 
+            speed = 500; 
+        }
+
+        setTimeout(typeEffect, speed);
     }
 
-    setInterval(changeText, 3000);
+    typeEffect(); 
 });
+
 
 
 // Counter
