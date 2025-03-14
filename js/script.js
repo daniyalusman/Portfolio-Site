@@ -11,15 +11,13 @@ hamburger.addEventListener('click', () => toggleNavbar ());
 
 document.querySelectorAll('.navlinks a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Default jump ko rokta hai
+
         let targetId = this.getAttribute('href'); 
         let targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust offset if needed
-                behavior: 'smooth'
-            });
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
