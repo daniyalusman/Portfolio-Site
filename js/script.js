@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(changeText, 3000); // Change every 3 seconds
 });
 
+
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
 let interval = 6000;
