@@ -11,7 +11,7 @@ hamburger.addEventListener('click', () => toggleNavbar ());
 
 document.querySelectorAll('.navlinks a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Default jump ko rokta hai
+        e.preventDefault();
 
         let targetId = this.getAttribute('href'); 
         let targetSection = document.querySelector(targetId);
@@ -23,26 +23,27 @@ document.querySelectorAll('.navlinks a').forEach(anchor => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    let textElement = document.querySelector(".banner-text p");
+    let textElement = document.getElementById("changing-text");
     let textArray = [
-        "I'm Cybersecurity Engineer",
-        "I'm Ethical Hacker",
-        "I'm Web Penetration Tester"
+        "Cybersecurity Engineer",
+        "Ethical Hacker",
+        "Web Penetration Tester"
     ];
     
     let textIndex = 0;
 
     function changeText() {
-        textElement.style.opacity = 0; // Hide text smoothly
+        textElement.style.opacity = 0;
         setTimeout(() => {
-            textElement.textContent = textArray[textIndex];
-            textElement.style.opacity = 1;
-            textIndex = (textIndex + 1) % textArray.length;
+            textElement.textContent = textArray[textIndex]; 
+            textElement.style.opacity = 1; 
+            textIndex = (textIndex + 1) % textArray.length; /
         }, 500);
     }
 
-    setInterval(changeText, 3000);
+    setInterval(changeText, 3000); 
 });
+
 
 
 // Counter
