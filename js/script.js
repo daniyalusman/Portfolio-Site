@@ -22,6 +22,29 @@ document.querySelectorAll('.navlinks a').forEach(anchor => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let textElement = document.querySelector(".banner-text p");
+    let textArray = [
+        "I'm Cybersecurity Engineer",
+        "I'm Ethical Hacker",
+        "I'm Web Penetration Tester"
+    ];
+    
+    let textIndex = 0;
+
+    function changeText() {
+        textElement.style.opacity = 0; // Hide text smoothly
+        setTimeout(() => {
+            textElement.textContent = textArray[textIndex];
+            textElement.style.opacity = 1;
+            textIndex = (textIndex + 1) % textArray.length;
+        }, 500);
+    }
+
+    setInterval(changeText, 3000);
+});
+
+
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
 let interval = 6000;
