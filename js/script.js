@@ -9,6 +9,21 @@ const toggleNavbar = () => {
 };
 hamburger.addEventListener('click', () => toggleNavbar ());
 
+document.querySelectorAll('.navlinks a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        let targetId = this.getAttribute('href'); 
+        let targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 50, // Adjust offset if needed
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
 let interval = 6000;
