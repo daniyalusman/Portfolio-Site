@@ -172,6 +172,7 @@ a {
 }
 .banner .banner-text p {
     font-size: 20px;
+    font-weight: 500;
     font-family: "Open Sans";
     margin-bottom: 20px;
     color: #ffffff;
@@ -185,8 +186,6 @@ a {
 }
 
 #changing-text {
-    font-size: 20px;
-    font-weight: medium;
     color: #00c0ff; 
     border-right: 3px solid #00c0ff;
     padding-right: 5px;
