@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     typeEffect(); 
 });
 
-
-
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
 let interval = 6000;
@@ -88,7 +86,6 @@ let observer = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.5 }); 
 
 observer.observe(counterSection);
-
 
 // Slider
 $('.testimonials-wrapper').slick({
