@@ -25,9 +25,9 @@ document.querySelectorAll('.navlinks a').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", function () {
     let textElement = document.getElementById("changing-text");
     let textArray = [
-        "Cybersecurity Engineer",
-        "Ethical Hacker",
-        "Web Penetration Tester"
+        "Cybersecurity Engineer ",
+        "Ethical Hacker ",
+        "Web Penetration Tester "
     ];
     
     let textIndex = 0;
