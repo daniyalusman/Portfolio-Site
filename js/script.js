@@ -12,18 +12,30 @@ hamburger.addEventListener('click', () => toggleNavbar ());
 // Counter
 let valueDisplays = document.querySelectorAll(".count");
 let interval = 6000;
-valueDisplays.forEach((valueDisplay) => {
-  let startValue = 0;
-  let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-  let duration = Math.floor(interval / endValue);
-  let counter = setInterval(function () {
-    startValue += 1;
-    valueDisplay.textContent = startValue;
-    if (startValue == endValue) {
-      clearInterval(counter);
+let counterSection = document.querySelector(".counter");
+
+let observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      valueDisplays.forEach((valueDisplay) => {
+        let startValue = 0;
+        let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(function () {
+          startValue += 1;
+          valueDisplay.textContent = startValue;
+          if (startValue == endValue) {
+            clearInterval(counter);
+          }
+        }, duration);
+      });
+      observer.unobserve(counterSection);
     }
-  }, duration);
-});
+  });
+}, { threshold: 0.5 }); 
+
+observer.observe(counterSection);
+
 
 // Slider
 $('.testimonials-wrapper').slick({
