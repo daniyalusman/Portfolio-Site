@@ -186,26 +186,21 @@ a {
 
 #changing-text {
     display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
     font-weight: bold;
     font-size: 24px;
-    color: #ff5733; /* Change as needed */
-    animation: slideText 3s ease-in-out infinite alternate;
+    color: #ff5733; 
+    border-right: 3px solid #ff5733;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinkCursor 0.8s infinite;
 }
 
-@keyframes slideText {
-    0% {
-        transform: translateX(0);
-    }
+@keyframes blinkCursor {
     50% {
-        transform: translateX(10px); /* Forward movement */
-    }
-    100% {
-        transform: translateX(0);
+        border-color: transparent;
     }
 }
-
 
 /** Why Choose Us **/
 .why-choose-us {
